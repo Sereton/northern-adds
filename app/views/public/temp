@@ -1,19 +1,12 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
 Category.create!([
-    {url:"comunidad",name:"Comunidad"},
-    {url:"servicios",name:"Servicios"},
-    {url:"forosdedebate",name:"Foros de debate"},
-    {url:"vivienda",name:"Vivienda"},
-    {url:"sevende",name:"Se vende"},
-    {url:"trabajo",name:"Trabajo"},
-    {url:"curros",name:"Curros"},
-    {url:"curriculums",name:"Curriculums"},
+    {url:"comunidad",name:"comunidad"},
+    {url:"servicios",name:"servicios"},
+    {url:"forosdedebate",name:"forosdedebate"},
+    {url:"vivienda",name:"vivienda"},
+    {url:"sevende",name:"sevende"},
+    {url:"trabajo",name:"trabajo"},
+    {url:"curros",name:"curros"},
+    {url:"curriculums",name:"curriculums"},
     {url:"actividades", name:"actividades",parent_id:1},
     {url:"animales", name:"animales",parent_id:1},
     {url:"artistas", name:"artistas",parent_id:1},
@@ -115,7 +108,7 @@ Category.create!(
 ]
  )   
 
-   Category.create!( [{url:"alquiler-de-pisos",name:"alquiler de pisos",parent_id:4},
+    {url:"alquiler-de-pisos",name:"alquiler de pisos",parent_id:4},
     {url:"bienes-raíces",name:"bienes raíces",parent_id:4},
     {url:"garaje-trastero",name:"garaje / trastero",parent_id:4},
     {url:"intercambio-de-casas",name:"intercambio de casas",parent_id:4},
@@ -124,7 +117,12 @@ Category.create!(
     {url:"piso-vacaciones",name:"piso vacaciones",parent_id:4},
     {url:"por-días-semanas",name:"por días / semanas",parent_id:4},
     {url:"se-busca-casa",name:"se busca casa",parent_id:4},
-    {url:"se-busca-habitación",name:"se busca habitación",parent_id:4},
+    {url:"se-busca-habitación",name:"se busca habitación",parent_id:4}
+
+
+
+
+
     {url:"antiguedades",name:"antiguedades",parent_id:5},
     {url:"arte/artesan",name:"arte/artesan",parent_id:5},
     {url:"ATV/UTV/moton",name:"ATV/UTV/moton",parent_id:5},
@@ -169,7 +167,8 @@ Category.create!(
     {url:"se busca",name:"se busca",parent_id:5},
     {url:"teléfonos móviles",name:"teléfonos móviles",parent_id:5},
     {url:"tickets",name:"tickets",parent_id:5},
-    {url:"trueque",name:"trueque",parent_id:5},
+    {url:"trueque",name:"trueque",parent_id:5}
+
 {url:"administración-ofi",name:"administración/ofi",parent_id:6},
 {url:"arquitectura",name:"arquitectura",parent_id:6},
 {url:"arte-diseño-medios",name:"arte/diseño/medios",parent_id:6},
@@ -199,5 +198,4 @@ Category.create!(
 {url:"transporte",name:"transporte",parent_id:6},
 {url:"venta-al-por-mayor",name:"venta al por mayor",parent_id:6},
 {url:"ventas-biz-dev",name:"ventas / biz dev",parent_id:6},
-{url:"web-usabilidad",name:"web / usabilidad",parent_id:6}])
-
+{url:"web-usabilidad",name:"web / usabilidad",parent_id:6}
