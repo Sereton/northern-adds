@@ -1,0 +1,11 @@
+<a href="javascript:document.print()" class="print-post">Imprimir este anuncio.</a>
+<a href="#">Contactar al anunciante</a>
+<span class="post-created-at-top">Publicado <%= time_ago_in_words @post.created_at %></span>
+
+<h2><%= @post.title %></h2>
+<div><%= simple_format @post.content %></div>
+
+<p class="post-meta">
+<span class="post-id">ID del Anuncio:  <%=@post.id %>.</span>
+<span class="post-created-at">Creado hace <%=time_ago_in_words @post.created_at  %>.</span>
+</p>

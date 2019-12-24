@@ -12,10 +12,14 @@
   <body>
     <div class="main">
     <div class="main-left">
-    <p> Avisos Clasificados </p>
+    <h2> <%= link_to "Avisos Clasificados", root_path%> </h2>
+    <%= link_to "Crear Anuncio", new_post_path if controller.controller_name == "public" %>
+    <%= render "categories/categories_sidebar" if controller.controller_name == "categories" %>
     
     </div>
     <div class="main-right">
+    <p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p>S>
     <%= yield%>
     </div>
     </div>

@@ -1,4 +1,10 @@
-<p id="notice"><%= notice %></p>
+<% @posts.each do |post| %>
+<div class="category-post">
+<span class="post-date">Hace <%=time_ago_in_words post.created_at%> </span>
+<span class="post-title"><%=link_to post.title, post_path(post)%></span>
+</div>
+<%end%>
 
-<%= link_to 'Edit', edit_category_path(@category) %> |
-<%= link_to 'Back', categories_path %>
+<%if @posts.empty? %>
+<h3>No hay anuncios en esta categoria.</h3>
+<%end%>
