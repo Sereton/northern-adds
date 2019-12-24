@@ -1,0 +1,31 @@
+<div class="inner"> 
+<%= link_to "Inicio", root_path %> >>
+<% if @post.present? && !@post.new_record?
+category = @post.category
+parent = @post.category.parent
+
+
+%>
+
+<% if parent.present? %>
+<%= link_to parent.name, category_path(parent) %> >>
+
+<% end %>
+
+
+<%= link_to @post.category.name, category_path(@post.category) %> >>
+<%= @post.title %>
+
+<% elsif @category.present? 
+   parent = @category.parent  %>
+
+   <%if parent.present? %>
+
+    <%= link_to parent.name, category_path(parent) %> >>
+    <% end %>
+   <%= @category.name %>
+
+
+<% end %>
+
+</div>
