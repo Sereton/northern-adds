@@ -1,7 +1,8 @@
 <% @posts.each do |post| %>
 <div class="category-post">
 <span class="post-date">Hace <%=time_ago_in_words post.created_at%> </span>
-<span class="post-title"><%=link_to post.title, post_path(post)%></span>
+<span> en <%= link_to post.category.name, category_path(post.category) %>.   </span>
+<strong>   <span class="post-title"><%=link_to post.title, post_path(post)%></span> </strong>
 </div>
 <%end%>
 

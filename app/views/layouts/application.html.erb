@@ -11,15 +11,29 @@
 
   <body>
   <div class="header">
-  <%= render "layouts/breadcrumb_nav" unless is_home? %>
+  <%= render "layouts/breadcrumb_nav"  %>
   </div>
     <div class="main">
     <div class="main-left">
     <h2> <%= link_to "Avisos Clasificados", root_path%> </h2>
+
+     <%= link_to "Crear Anuncio", new_post_path  %>
+
     <p class="registrarse"><%= link_to "Registrarse", new_account_session_path if controller.controller_name == "public" unless account_signed_in?  %> </p> </br>
-    <%= link_to "Crear Anuncio", new_post_path  %>
+   
     <%= render "categories/categories_sidebar" if controller.controller_name == "categories" %>
     
+    <% if is_home? %>
+
+    <div class="legales-nav">
+    <p><%= link_to "Ayuda FAQ", faqs_path %></p>
+    <p><%= link_to "Legal", terms_path %></p>
+    <p><%= link_to "Cuidado con estafas.", scams_path %></p>
+    <p><%= link_to "Seguridad.", safety_path %></p>
+    </div>
+    <% end %>
+   
+   
     </div>
     <div class="main-right">
     <p class="notice"><%= notice %></p>

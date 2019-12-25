@@ -33,11 +33,25 @@
     height: 50px;
     top: 0;
     left: 0;
-}
-
-.inner{
+    .inner{
     max-width: 1024px;
     margin-top:15px;
     margin-left: auto;
     margin-right: auto;
+}
+}
+
+
+
+.pull-right{
+    float: right;
+}
+
+.m-l-10{
+    margin-left: 10px;
+}
+
+.legales-nav {
+    margin-top: 50px;
+
 }
