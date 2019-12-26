@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get "/faqs" => "public#faqs",as:"faqs"
   get "/safety" => "public#safety",as:"safety"
   get "/scams" => "public#scams",as:"scams"
+  get "/dashboard" => "public#home",as:"dashboard"
 
  
   root to: "public#home"

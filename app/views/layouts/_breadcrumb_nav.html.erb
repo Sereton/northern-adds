@@ -1,12 +1,17 @@
-<div class="inner"> 
+<div class="container">
+<div class="row">
+<div class="col-12 pt-3 pb-3"> 
 <% if account_signed_in? %>
-<%= link_to "Cerrar sesion:  ", destroy_account_session_path,method: :delete , class: "pull-right m-l-10"%>
+<%= link_to "Cerrar sesion  ", destroy_account_session_path,method: :delete , class: "btn btn-danger float-right ml-3"%>
 <% else %>
-<%= link_to "Mi Cuenta:  ", root_path , class: "pull-right m-l-10"%>
+<%= link_to "Iniciar sesion  ", new_account_session_path , class: "btn btn-primary float-right ml-3"%>
+<%= link_to "Abrir cuenta  ", new_account_registration_path , class: "btn btn-success float-right ml-3"%>
 <% end %>
 
-<%= link_to "Nuevo Anuncio   ", new_post_path, class: "pull-right m-l-10"%>
-<%= link_to "Inicio", root_path %> >>
+<%= link_to "Dashboard", dashboard_path, class:"text-dark float-right ml-3 mt-2" if account_signed_in? %>
+
+
+<%= link_to "Inicio", root_path, class: "text-dark" %> >>
 <% if @post.present? && !@post.new_record?
 category = @post.category
 parent = @post.category.parent
@@ -35,4 +40,6 @@ parent = @post.category.parent
 
 <% end %>
 
+</div>
+</div>
 </div>

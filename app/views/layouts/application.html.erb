@@ -5,19 +5,20 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-  <div class="header">
+  <header class="header">
   <%= render "layouts/breadcrumb_nav"  %>
-  </div>
-    <div class="main">
-    <div class="main-left">
-    <h2> <%= link_to "Avisos Clasificados", root_path%> </h2>
+   </header>
+    <div class="container ">
+    <div class="row">
+    <div class="col-3">
+    <h2> <%= link_to "Avisos Clasificados", root_path, class:"text-dark "%> </h2>
 
-     <%= link_to "Crear Anuncio", new_post_path  %>
+     <%= link_to "Crear Anuncio", new_post_path,class:"text-light btn btn-success"  %>
 
     <p class="registrarse"><%= link_to "Registrarse", new_account_session_path if controller.controller_name == "public" unless account_signed_in?  %> </p> </br>
    
@@ -33,9 +34,9 @@
     </div>
     <% end %>
    
-   
-    </div>
-    <div class="main-right">
+   </div>
+  
+    <div class="col-9">
     <p class="notice"><%= notice %></p>
        <p class="alert"><%= alert %></p>
     <%= yield%>
