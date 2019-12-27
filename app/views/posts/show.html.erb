@@ -1,11 +1,12 @@
-<a href="#" onclick="window.print();return false;" class="print-post">Imprimir este anuncio.</a>
-<a href="#">Contactar al anunciante</a>
+<a href="#" onclick="window.print();return false;" class="float-right btn btn-secondary">Imprimir.</a>
+
 <span class="post-created-at-top">Publicado <%= time_ago_in_words @post.created_at %></span>
 
 
-<h2><%= @post.title %></h2>
-<div><%= simple_format @post.content %></div>
+<h1 class="mt-4 mb-4"><%= @post.title %></h1>
+<div><%=  @post.content %></div>
 
+<%= link_to "Contactar al anunciante", "#", class:"btn btn-success" %>
 <p class="post-meta">
 <span class="post-id">ID del Anuncio:  <%=@post.id.to_s %>.</span>
 <span class="post-created-at">Creado hace <%=time_ago_in_words @post.created_at  %>.</span>

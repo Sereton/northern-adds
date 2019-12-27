@@ -7,6 +7,7 @@
 
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans&display=swap" rel="stylesheet"> 
   </head>
 
   <body>
@@ -18,13 +19,13 @@
     <div class="col-3">
     <h2> <%= link_to "Avisos Clasificados", root_path, class:"text-dark "%> </h2>
 
-     <%= link_to "Crear Anuncio", new_post_path,class:"text-light btn btn-success"  %>
+     <%= link_to "Crear Anuncio", new_post_path,class:"text-light btn btn-success" unless is_auth? %>
 
     <p class="registrarse"><%= link_to "Registrarse", new_account_session_path if controller.controller_name == "public" unless account_signed_in?  %> </p> </br>
    
     <%= render "categories/categories_sidebar" if controller.controller_name == "categories" %>
     
-    <% if is_home? %>
+    <% if is_home? || is_auth? %>
 
     <div class="legales-nav">
     <p><%= link_to "Ayuda FAQ", faqs_path %></p>
@@ -37,10 +38,11 @@
    </div>
   
     <div class="col-9">
-    <p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p>
+   
     <%= yield%>
     </div>
     </div>
+
+    <%= flash_notifications%>
   </body>
 </html>

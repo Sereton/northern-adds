@@ -3,16 +3,16 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 
-.category-box {
-    float: left;
-    width: 33%;
-}
+.category-box .h6 {
+ background: #dedede;
+ padding: 5px 8px;
+ border-radius: 6px;
 
-.category-post {
-    margin-bottom: 10px;
-    padding: 10px;
-    background: #efefef;
-    text-color: red;
+}
+    
+
+.subcat{
+    margin-left: 10px;
 }
 
 .post-date{
