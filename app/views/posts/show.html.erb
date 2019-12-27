@@ -6,8 +6,34 @@
 <h1 class="mt-4 mb-4"><%= @post.title %></h1>
 <div><%=  @post.content %></div>
 
-<%= link_to "Contactar al anunciante", "#", class:"btn btn-success" %>
+<%= link_to "Contactar al anunciante", "#", class:"btn btn-info",id:"show_contact_form" %>
 <p class="post-meta">
 <span class="post-id">ID del Anuncio:  <%=@post.id.to_s %>.</span>
 <span class="post-created-at">Creado hace <%=time_ago_in_words @post.created_at  %>.</span>
 </p>
+
+
+<div id="contact-form" class="bg-light p-5">
+    <div class="row ">
+        <div class="col-sm-6">
+            <%= form_tag send_enquiry_path do %>
+                <% user_email = account_signed_in?? current_account.email : nil %>
+            <%= hidden_field_tag :post_id, @post.id %>
+            <div class="form-group">
+            <%= label_tag "Correo Electronico" %>
+            <%= text_field_tag :email, user_email, class: "form-control" %>
+
+            
+            </div>
+            <div class="form-group">
+             <%= label_tag "Mensaje" %>
+            <%= text_area_tag  :message,nil, class:"form-control"%>
+            </div>
+            <div class="form-group"><%= submit_tag "Enviar Mensaje", class: "btn btn-success" %></div>
+            
+            
+        </div>
+    </div>
+</div>
+
+<% end %>

@@ -20,12 +20,12 @@ parent = @post.category.parent
 %>
 
 <% if parent.present? %>
-<%= link_to parent.name, category_path(parent) %> >>
+<%= link_to parent.name, show_category_path(parent.url) %> >>
 
 <% end %>
 
 
-<%= link_to @post.category.name, category_path(@post.category) %> >>
+<%= link_to @post.category.name, show_category_path(@post.category.url) %> >>
 <%= @post.title %>
 
 <% elsif @category.present? 
@@ -33,7 +33,7 @@ parent = @post.category.parent
 
    <%if parent.present? %>
 
-    <%= link_to parent.name, category_path(parent) %> >>
+    <%= link_to parent.name, show_category_path(parent.url) %> >>
     <% end %>
    <%= @category.name %>
 
