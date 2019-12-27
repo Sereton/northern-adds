@@ -11,15 +11,20 @@
   </head>
 
   <body>
-  <header class="header">
-  <%= render "layouts/breadcrumb_nav"  %>
-   </header>
+ 
     <div class="container ">
     <div class="row">
     <div class="col-3">
-    <h2> <%= link_to "Avisos Clasificados", root_path, class:"text-dark "%> </h2>
+    <h2 class="mt-2"> <%= link_to "Avisos Clasificados", root_path, class:"text-dark "%> </h2>
+    <span> <%= link_to  root_path do%>
+    
+     <%= image_tag("blue.png",width:"100px",class: "mr-5 mb-3")%>
+    
+     <%end%>
+     
+      </span>
 
-     <%= link_to "Crear Anuncio", new_post_path,class:"text-light btn btn-success" unless is_auth? %>
+     <%= link_to "Crear Anuncio", new_post_path,class:"text-light btn btn-success mb-3" unless is_auth? %>
 
     <p class="registrarse"><%= link_to "Registrarse", new_account_session_path if controller.controller_name == "public" unless account_signed_in?  %> </p> </br>
    
@@ -38,7 +43,9 @@
    </div>
   
     <div class="col-9">
-   
+     <header id="header">
+  <%= render "layouts/breadcrumb_nav"  %>
+   </header>
     <%= yield%>
     </div>
     </div>

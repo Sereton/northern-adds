@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   devise_for :accounts
-  resources :posts
-  resources :categories
+  resources :posts, except: [:index]
+  resources :categories, except: [:show]
+
+  get "c/:url" => "categories#show", as: :show_category
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   
