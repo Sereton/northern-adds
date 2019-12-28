@@ -21,7 +21,10 @@ class PublicController < ApplicationController
 
         if @post.present?
             logger.debug "Message has been sent"
-            ContactMailer.post_enquiry(@post.id,params[:message]).deliver_now
+            ContactMailer.post_enquiry(@post.id,params[:email],params[:message]).deliver_now
+            redirect_to @post, notice: 'Message was successfully sent.'
         end
+
+        
     end
 end
